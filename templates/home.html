@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block main %}
+<header>
+    <h1>Welcome To Home Page</h1>
+</header>
+<main>
+    {% for i in object_list %}
+        <li> <a href="{% url 'crud_detail' i.pk %}">{{ i.title }}</a> 
+        <a href="{% url 'crud_delete' i.pk %}">Delete</a>
+        <a href="{% url 'crud_update' i.pk %}">Update</a>
+        </li>
+    {% endfor %}
+    <li> <a href="{% url 'crud_create' %}">Add New</a> </li>
+
+</main>
+
+{% endblock main %}
